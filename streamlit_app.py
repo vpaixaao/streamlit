@@ -1,3 +1,4 @@
+
 import streamlit as st
 
 ## Botão    
@@ -131,3 +132,45 @@ st.latex(r'''
      a \left(\frac{1-r^{n}}{1-r}\right)
      ''')
 
+##aula do dia 16
+import streamlit as st
+
+st.title('Customizando o tema de aplicações Streamlit')
+
+st.write('Conteúdo do arquivo `.streamlit/config.py` desta aplicação')
+
+st.code("""
+[theme]
+primaryColor="#FF0000"
+backgroundColor="#FF0000"
+secondaryBackgroundColor="#FF0000"
+textColor="#FFFFFF"
+font="monospace"
+""")
+
+## criação do menu lateral =)
+
+number = st.sidebar.slider('Selecione um número:', 0, 10, 5)
+st.write('O número selecionado no controle deslizante é:', number)
+
+##aula do dia 17
+
+import streamlit as st
+
+st.title('st.secrets')
+
+# st.write(st.secrets['message'])
+
+##aula do dia 18
+##aula do dia 19
+##aula do dia 20
+##aula do dia 21
+##aula do dia 22
+##aula do dia 23
+##aula do dia 24
+##aula do dia 25
+##aula do dia 26
+##aula do dia 27
+##aula do dia 28
+##aula do dia 29
+##aula do dia 30
