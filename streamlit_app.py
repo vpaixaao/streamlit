@@ -1,60 +1,16 @@
 import streamlit as st
 
-# st.header('st.button')
+## Botão    
+st.title("Criando um botão")
 
-# if st.button('Say hello'):
-#      st.write('Why hello there')
-# else:
-#      st.write('Goodbye')
-     
-     
- ## BUTÃO    
-# st.title("make a button")
+result = st.button("click here")
 
-# result = st.button("click here")
+st.write(result)
 
-# st.write(result)
-
-# if result:
-#      st.write(":smile:")
+if result:
+     st.write(":smile:")
      
-# st.title("checkbox")
-
-### Botão check, checkbox, botão
-
-# ## check button 
-# st.title("buttonchecks, checkboxes and buttons")
-
-# page_names = ["Checkbox", "Button"]
-# page = st.radio('Navegation', page_names)
-# st.write("**The variable 'page' returns:**", page)
-
-# ## buttoncheck
-# if page == "Checkbox":
-#      st.subheader("welcome to the checkbox page!")
-#      st.write("nice to see you! :wave:")
-#      check = st.checkbox("click here")
-#      st.write('state of the checkbox', check)
-     
-# if check:
-#      nested_btn = st.button("button nested in Checkbox")
-     
-#      if nested_btn:
-#           st.write(":cake:"*10)         
-# else:
-#      st.subheader("welcome to the button page!")
-#      st.write(":thumbsup")
-#      result = st.button("Click Here")
-#      st.write("state of button:", result)
-     
-# if result:
-#      nested_check = st.checkbox("Checkbox nested in button")
-     
-#      if nested_check:
-#           st.write(":heart:"*10)
-     
-     
-## aula  do dia 8
+# aula  do dia 8
 import streamlit as st
 from datetime import time, datetime
 
@@ -92,5 +48,86 @@ st.subheader('Slider de data e hora')
 start_time = st.slider(
      "Quando você vai começar?",
      value=datetime(2020, 1, 1, 9, 30),
+     ## só formatar o tipo de data :D
      format="DD/MM/YY - hh:mm")
 st.write("Início:", start_time)
+
+## aula do dia 9
+st.write("##gerando grafico de linhas com dados aleatorios")
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+st.header('Gráfico de linhas')
+
+chart_data = pd.DataFrame(
+     np.random.randn(20, 3),
+     columns=['a', 'b', 'c'])
+
+st.line_chart(chart_data)
+
+##aula do dia 10
+st.write("##selectbox/dropdown")
+import streamlit as st
+
+st.header('st.selectbox')
+
+option = st.selectbox(
+     'Qual a sua cor favorita?',
+     ('Azul', 'Vermelho', 'Verde'))
+
+st.write('Sua cor favorita é ', option)
+
+##aula do dia 11
+st.write("##selectbox/dropdown")
+
+import streamlit as st
+
+st.header('st.multiselect')
+
+options = st.multiselect(
+     'Quais são suas cores favoritas?',
+     ['Verde', 'Amarelo', 'Vermelho', 'Azul'],
+     ['Amarelo', 'Vermelho'])
+
+st.write('Você selecionou:', options)
+
+##aula do dia 12
+st.write("##checkbox")
+
+import streamlit as st
+
+st.header('st.checkbox')
+
+st.write ('O que você gostaria de pedir?')
+
+icecream = st.checkbox('Sorvete')
+coffee = st.checkbox('Café')
+cola = st.checkbox('Refrigerante')
+
+if icecream:
+     st.write("Sucesso! Aqui está o seu 🍦")
+
+if coffee: 
+     st.write("Ok, aqui está o seu café ☕")
+
+if cola:
+     st.write("E lá vamos nós 🥤")
+     
+##aula do dia 13
+st.write("##gitpod")
+
+##aulda do dia 14
+st.write("https://www.gitpod.io/")
+
+##aula do dia 15
+import streamlit as st
+st.write("funções")
+st.header('st.latex')
+
+st.latex(r'''
+     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+     \sum_{k=0}^{n-1} ar^k =
+     a \left(\frac{1-r^{n}}{1-r}\right)
+     ''')
+
